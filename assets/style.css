@@ -47,6 +47,10 @@ body {
 
 .sidebar nav { display: flex; flex-direction: column; padding: 12px 0; }
 
+/* Main menu takes the free space so the bottom nav (Settings) is pinned to the foot of the sidebar. */
+.sidebar nav:first-of-type { flex: 1; }
+.sidebar nav.sidebar-bottom { flex: 0 0 auto; padding: 8px 0; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+
 .sidebar nav a {
   padding: 10px 20px;
   color: var(--sidebar-text);

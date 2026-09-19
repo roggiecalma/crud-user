@@ -39,7 +39,9 @@ $navItems = [
           <a href="<?= e($item['href']) ?>" class="<?= ($activePage ?? '') === $key ? 'active' : '' ?>"><?= e($item['label']) ?></a>
         <?php endif; ?>
       <?php endforeach; ?>
-      <?php // Settings is static: shown to every signed-in user, not controlled by role pages. ?>
+    </nav>
+    <?php // Settings is static: shown to every signed-in user, not controlled by role pages. ?>
+    <nav class="sidebar-bottom">
       <a href="settings.php" class="<?= ($activePage ?? '') === 'settings' ? 'active' : '' ?>">Settings</a>
     </nav>
   </aside>

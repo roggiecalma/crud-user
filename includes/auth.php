@@ -34,17 +34,20 @@ function allowedPageKeys(int $roleId): array
 }
 
 /**
- * First page the signed-in user may open (page files are named "<page_key>.php"),
- * or null if their role has no pages. Used instead of assuming everyone can see the dashboard.
+ * First page the signed-in user may open (page files are named "<page_key>.php"). Falls back to the
+ * static settings page, which every signed-in user can open, so this is null only when logged out.
  */
 function homePage(): ?string
 {
+    if (!currentUser()) {
+        return null;
+    }
     foreach ($_SESSION['allowed_pages'] ?? [] as $key) {
         if (is_file(__DIR__ . '/../' . $key . '.php')) {
             return $key . '.php';
         }
     }
-    return null;
+    return 'settings.php';
 }
 
 function requirePage(string $pageKey): void

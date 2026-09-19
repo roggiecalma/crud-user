@@ -56,11 +56,17 @@ To add a new page later:
 
 ## Sample pages
 
-`reports`, `announcements`, `tasks`, `attendance`, `leave_requests`, `inventory`, `customers`, `invoices`,
-`audit_log` and `settings` are boilerplate pages with hard-coded example data, rendered by `renderSamplePage()`
+`reports`, `announcements`, `tasks`, `attendance`, `leave_requests`, `inventory`, `customers`, `invoices`
+and `audit_log` are boilerplate pages with hard-coded example data, rendered by `renderSamplePage()`
 in `includes/sample.php`. Each one is gated by `requirePage()` like the rest. To turn one into a real page,
 replace the arrays in its file with database queries (or write your own markup and drop the helper).
 Permissions are cached in the session at login, so log out and back in after granting a new page.
+
+## Settings page
+
+`settings.php` is static: every signed-in user sees it in the sidebar and can open it, regardless of role. It is not
+in the `pages` table and has no `requirePage()` call. It currently holds Change Password (current password required,
+new password min. 8 characters).
 
 ## Local development
 

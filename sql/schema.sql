@@ -66,8 +66,7 @@ INSERT INTO pages (page_key, label, sort_order) VALUES
     ('inventory', 'Inventory', 10),
     ('customers', 'Customers', 11),
     ('invoices', 'Invoices', 12),
-    ('audit_log', 'Audit Log', 13),
-    ('settings', 'Settings', 14)
+    ('audit_log', 'Audit Log', 13)
 ON DUPLICATE KEY UPDATE label = VALUES(label), sort_order = VALUES(sort_order);
 
 INSERT IGNORE INTO role_pages (role_id, page_id)

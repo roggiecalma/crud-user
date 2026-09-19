@@ -19,7 +19,6 @@ $navItems = [
     'customers' => ['label' => 'Customers', 'href' => 'customers.php'],
     'invoices' => ['label' => 'Invoices', 'href' => 'invoices.php'],
     'audit_log' => ['label' => 'Audit Log', 'href' => 'audit_log.php'],
-    'settings' => ['label' => 'Settings', 'href' => 'settings.php'],
 ];
 ?>
 <!DOCTYPE html>
@@ -40,6 +39,8 @@ $navItems = [
           <a href="<?= e($item['href']) ?>" class="<?= ($activePage ?? '') === $key ? 'active' : '' ?>"><?= e($item['label']) ?></a>
         <?php endif; ?>
       <?php endforeach; ?>
+      <?php // Settings is static: shown to every signed-in user, not controlled by role pages. ?>
+      <a href="settings.php" class="<?= ($activePage ?? '') === 'settings' ? 'active' : '' ?>">Settings</a>
     </nav>
   </aside>
   <div class="main">

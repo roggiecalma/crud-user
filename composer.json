@@ -1,0 +1,10 @@
+{
+    "name": "roggiecalma/crud-user",
+    "description": "Simple CRUD for Users, Departments, and Roles with role-based page access",
+    "type": "project",
+    "require": {
+        "php": ">=8.1",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*"
+    }
+}

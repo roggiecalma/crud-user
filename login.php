@@ -7,7 +7,7 @@ require __DIR__ . '/includes/auth.php';
 require __DIR__ . '/includes/functions.php';
 
 if (currentUser()) {
-    redirect('dashboard.php');
+    redirect(homePage() ?? 'dashboard.php');
 }
 
 $error = null;
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user'] = $user;
         $_SESSION['allowed_pages'] = $user['role_id'] ? allowedPageKeys((int)$user['role_id']) : [];
         session_regenerate_id(true);
-        redirect('dashboard.php');
+        redirect(homePage() ?? 'dashboard.php');
     }
 
     $error = 'Invalid email or password.';

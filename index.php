@@ -6,7 +6,7 @@ require __DIR__ . '/includes/config.php';
 require __DIR__ . '/includes/auth.php';
 
 if (currentUser()) {
-    header('Location: dashboard.php');
+    header('Location: ' . (homePage() ?? 'dashboard.php'));
 } else {
     header('Location: login.php');
 }

@@ -26,10 +26,25 @@ function allowedPageKeys(int $roleId): array
     $stmt = db()->prepare(
         'SELECT p.page_key FROM pages p
          INNER JOIN role_pages rp ON rp.page_id = p.id
-         WHERE rp.role_id = :role_id'
+         WHERE rp.role_id = :role_id
+         ORDER BY p.sort_order, p.id'
     );
     $stmt->execute(['role_id' => $roleId]);
     return $stmt->fetchAll(PDO::FETCH_COLUMN);
+}
+
+/**
+ * First page the signed-in user may open (page files are named "<page_key>.php"),
+ * or null if their role has no pages. Used instead of assuming everyone can see the dashboard.
+ */
+function homePage(): ?string
+{
+    foreach ($_SESSION['allowed_pages'] ?? [] as $key) {
+        if (is_file(__DIR__ . '/../' . $key . '.php')) {
+            return $key . '.php';
+        }
+    }
+    return null;
 }
 
 function requirePage(string $pageKey): void

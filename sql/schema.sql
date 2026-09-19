@@ -57,7 +57,17 @@ INSERT INTO pages (page_key, label, sort_order) VALUES
     ('dashboard', 'Dashboard', 1),
     ('users', 'Users', 2),
     ('departments', 'Departments', 3),
-    ('roles', 'Roles', 4)
+    ('roles', 'Roles', 4),
+    ('reports', 'Reports', 5),
+    ('announcements', 'Announcements', 6),
+    ('tasks', 'Tasks', 7),
+    ('attendance', 'Attendance', 8),
+    ('leave_requests', 'Leave Requests', 9),
+    ('inventory', 'Inventory', 10),
+    ('customers', 'Customers', 11),
+    ('invoices', 'Invoices', 12),
+    ('audit_log', 'Audit Log', 13),
+    ('settings', 'Settings', 14)
 ON DUPLICATE KEY UPDATE label = VALUES(label), sort_order = VALUES(sort_order);
 
 INSERT IGNORE INTO role_pages (role_id, page_id)

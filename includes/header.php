@@ -10,6 +10,16 @@ $navItems = [
     'users' => ['label' => 'Users', 'href' => 'users.php'],
     'departments' => ['label' => 'Departments', 'href' => 'departments.php'],
     'roles' => ['label' => 'Roles', 'href' => 'roles.php'],
+    'reports' => ['label' => 'Reports', 'href' => 'reports.php'],
+    'announcements' => ['label' => 'Announcements', 'href' => 'announcements.php'],
+    'tasks' => ['label' => 'Tasks', 'href' => 'tasks.php'],
+    'attendance' => ['label' => 'Attendance', 'href' => 'attendance.php'],
+    'leave_requests' => ['label' => 'Leave Requests', 'href' => 'leave_requests.php'],
+    'inventory' => ['label' => 'Inventory', 'href' => 'inventory.php'],
+    'customers' => ['label' => 'Customers', 'href' => 'customers.php'],
+    'invoices' => ['label' => 'Invoices', 'href' => 'invoices.php'],
+    'audit_log' => ['label' => 'Audit Log', 'href' => 'audit_log.php'],
+    'settings' => ['label' => 'Settings', 'href' => 'settings.php'],
 ];
 ?>
 <!DOCTYPE html>

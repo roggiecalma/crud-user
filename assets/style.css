@@ -170,3 +170,19 @@ body {
 }
 .login-box h1 { margin-top: 0; font-size: 20px; }
 .login-box form { text-align: left; }
+
+/* Sample pages */
+.page-head p { margin: 6px 0 0; }
+.section-gap { margin-bottom: 20px; }
+.alert-info { background: #dbeafe; color: #1e40af; }
+code { background: rgba(0, 0, 0, 0.06); padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+
+.badge-warning { background: #fef3c7; color: #92400e; }
+.badge-danger { background: var(--error-bg); color: var(--error-text); }
+
+.bar-chart { display: flex; align-items: stretch; gap: 14px; height: 220px; }
+.bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; min-width: 0; font-size: 12px; color: var(--muted); }
+.bar-value { color: var(--text); font-weight: 600; margin-bottom: 4px; }
+.bar-track { flex: 1; width: 100%; display: flex; align-items: flex-end; justify-content: center; }
+.bar { width: 100%; max-width: 44px; min-height: 2px; background: var(--primary); border-radius: 4px 4px 0 0; }
+.bar-label { margin-top: 6px; }

@@ -12,7 +12,8 @@ $pdo = db();
 $action = $_GET['action'] ?? 'list';
 $id = isset($_GET['id']) ? (int)$_GET['id'] : null;
 
-$allPages = $pdo->query('SELECT * FROM pages ORDER BY sort_order, label')->fetchAll();
+// Settings is static (every signed-in user gets it), so it is never offered as a grantable page.
+$allPages = $pdo->query("SELECT * FROM pages WHERE page_key <> 'settings' ORDER BY sort_order, label")->fetchAll();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     verifyCsrf();
